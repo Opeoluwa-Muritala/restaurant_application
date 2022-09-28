@@ -237,60 +237,80 @@ class _SignupState extends State<Signup> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.transparent,
-                            image: DecorationImage(
-                              image: AssetImage('assets/google.png'),
-                              fit: BoxFit.cover,
+                        GestureDetector(
+                          onTap: () {
+                            print("Sign in with google");
+                          },
+                          child: Container(
+                            height: 50,
+                            width: 50,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: Colors.transparent,
+                              image: DecorationImage(
+                                image: AssetImage('assets/google.png'),
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         ),
                         SizedBox(
                           width: 10,
                         ),
-                        Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.transparent,
-                            image: DecorationImage(
-                              image: AssetImage('assets/facebook.png'),
-                              fit: BoxFit.cover,
+                        GestureDetector(
+                          onTap: () {
+                            print("Sign in with facebook");
+                          },
+                          child: Container(
+                            height: 50,
+                            width: 50,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: Colors.transparent,
+                              image: DecorationImage(
+                                image: AssetImage('assets/facebook.png'),
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         ),
                         SizedBox(
                           width: 10,
                         ),
-                        Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.transparent,
-                            image: DecorationImage(
-                              image: AssetImage('assets/twitter.png'),
-                              fit: BoxFit.cover,
+                        GestureDetector(
+                          onTap: () {
+                            print("Sign in with twitter");
+                          },
+                          child: Container(
+                            height: 50,
+                            width: 50,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: Colors.transparent,
+                              image: DecorationImage(
+                                image: AssetImage('assets/twitter.png'),
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         ),
                         SizedBox(
                           width: 10,
                         ),
-                        Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.transparent,
-                            image: DecorationImage(
-                              image: AssetImage('assets/linkedn.png'),
-                              fit: BoxFit.cover,
+                        GestureDetector(
+                          onTap: () {
+                            print("Sign in with linkedin");
+                          },
+                          child: Container(
+                            height: 50,
+                            width: 50,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: Colors.transparent,
+                              image: DecorationImage(
+                                image: AssetImage('assets/linkedn.png'),
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         ),

@@ -15,6 +15,9 @@ class Home extends StatelessWidget {
   );
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        backgroundColor: Colors.yellow,
+      ),
       backgroundColor: Color.fromARGB(255, 206, 205, 205),
       body: ListView(children: [
         Column(
@@ -68,8 +71,8 @@ class Home extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Foods(prize: "15usd", img: 'assets/spag.jpg'),
-                  Foods(prize: "15usd", img: 'assets/macaroni.jpg'),
+                  Foods(prize: "15 usd", img: 'assets/spag.jpg'),
+                  Foods(prize: "15 usd", img: 'assets/macaroni.jpg'),
                 ],
               ),
             ),
@@ -81,8 +84,8 @@ class Home extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Foods(prize: "15usd", img: 'assets/milkshake.jpg'),
-                  Foods(prize: "15usd", img: 'assets/bugar.jpg'),
+                  Foods(prize: "5 usd", img: 'assets/milkshake.jpg'),
+                  Foods(prize: "10 usd", img: 'assets/bugar.jpg'),
                 ],
               ),
             ),
@@ -94,8 +97,8 @@ class Home extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Foods(prize: "15usd", img: 'assets/turky.png'),
-                  Foods(prize: "15usd", img: 'assets/chicken.jpg'),
+                  Foods(prize: "25 usd", img: 'assets/turky.png'),
+                  Foods(prize: "25 usd", img: 'assets/chicken.jpg'),
                 ],
               ),
             ),
@@ -117,7 +120,9 @@ class Home extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      print("Home page");
+                    },
                     icon: Icon(
                       Icons.home_outlined,
                       size: 40,
@@ -131,7 +136,9 @@ class Home extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    print("Notifications");
+                  },
                   icon: Icon(
                     Icons.notifications_outlined,
                     size: 40,
@@ -145,7 +152,9 @@ class Home extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    print(" Accounts");
+                  },
                   icon: Icon(
                     Icons.person_outlined,
                     size: 40,
@@ -158,7 +167,9 @@ class Home extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    print("Favorite");
+                  },
                   icon: Icon(
                     Icons.favorite_outline_outlined,
                     size: 40,
@@ -173,7 +184,9 @@ class Home extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color.fromARGB(255, 243, 106, 106),
-        onPressed: () {},
+        onPressed: () {
+          print("Shopping cart");
+        },
         child: Icon(
           Icons.shopping_cart_outlined,
           color: Colors.black,
