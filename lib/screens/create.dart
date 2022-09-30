@@ -74,22 +74,20 @@ class _SignupState extends State<Signup> {
                         SizedBox(
                           width: 55,
                         ),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.white,
-                          ),
-                          child: SizedBox(
-                            height: 25,
-                            width: 200,
-                            child: TextFormField(
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                contentPadding:
-                                    EdgeInsets.only(left: 10, bottom: 15),
+                        SizedBox(
+                          height: 25,
+                          width: 200,
+                          child: TextField(
+                            decoration: InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.grey),
+                                    borderRadius: BorderRadius.circular(20.0)),
+                                focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.brown),
+                                    borderRadius: BorderRadius.circular(20.0)),
                                 border: InputBorder.none,
-                              ),
-                            ),
+                                filled: true,
+                                fillColor: Color.fromARGB(255, 233, 224, 224)),
                           ),
                         ),
                       ],
@@ -107,22 +105,20 @@ class _SignupState extends State<Signup> {
                         SizedBox(
                           width: 10,
                         ),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.white,
-                          ),
-                          child: SizedBox(
-                            height: 25,
-                            width: 200,
-                            child: TextFormField(
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                contentPadding:
-                                    EdgeInsets.only(left: 10, bottom: 15),
+                        SizedBox(
+                          height: 25,
+                          width: 200,
+                          child: TextField(
+                            decoration: InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.grey),
+                                    borderRadius: BorderRadius.circular(20.0)),
+                                focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.brown),
+                                    borderRadius: BorderRadius.circular(20.0)),
                                 border: InputBorder.none,
-                              ),
-                            ),
+                                filled: true,
+                                fillColor: Color.fromARGB(255, 233, 224, 224)),
                           ),
                         ),
                       ],
@@ -140,22 +136,20 @@ class _SignupState extends State<Signup> {
                         SizedBox(
                           width: 17,
                         ),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.white,
-                          ),
-                          child: SizedBox(
-                            height: 25,
-                            width: 200,
-                            child: TextFormField(
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                contentPadding:
-                                    EdgeInsets.only(left: 10, bottom: 15),
+                        SizedBox(
+                          height: 25,
+                          width: 200,
+                          child: TextField(
+                            decoration: InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.grey),
+                                    borderRadius: BorderRadius.circular(20.0)),
+                                focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.brown),
+                                    borderRadius: BorderRadius.circular(20.0)),
                                 border: InputBorder.none,
-                              ),
-                            ),
+                                filled: true,
+                                fillColor: Color.fromARGB(255, 233, 224, 224)),
                           ),
                         ),
                       ],
@@ -173,22 +167,21 @@ class _SignupState extends State<Signup> {
                         SizedBox(
                           width: 58,
                         ),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.white,
-                          ),
-                          child: SizedBox(
-                            height: 25,
-                            width: 200,
-                            child: TextFormField(
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                contentPadding:
-                                    EdgeInsets.only(left: 10, bottom: 15),
+                        SizedBox(
+                          height: 25,
+                          width: 200,
+                          child: TextField(
+                            obscureText: true,
+                            decoration: InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.grey),
+                                    borderRadius: BorderRadius.circular(20.0)),
+                                focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.brown),
+                                    borderRadius: BorderRadius.circular(20.0)),
                                 border: InputBorder.none,
-                              ),
-                            ),
+                                filled: true,
+                                fillColor: Color.fromARGB(255, 233, 224, 224)),
                           ),
                         ),
                       ],
@@ -206,22 +199,21 @@ class _SignupState extends State<Signup> {
                         SizedBox(
                           width: 15,
                         ),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.white,
-                          ),
-                          child: SizedBox(
-                            height: 25,
-                            width: 200,
-                            child: TextFormField(
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                contentPadding:
-                                    EdgeInsets.only(left: 10, bottom: 15),
+                        SizedBox(
+                          height: 25,
+                          width: 200,
+                          child: TextField(
+                            obscureText: true,
+                            decoration: InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.grey),
+                                    borderRadius: BorderRadius.circular(20.0)),
+                                focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.brown),
+                                    borderRadius: BorderRadius.circular(20.0)),
                                 border: InputBorder.none,
-                              ),
-                            ),
+                                filled: true,
+                                fillColor: Color.fromARGB(255, 233, 224, 224)),
                           ),
                         ),
                       ],

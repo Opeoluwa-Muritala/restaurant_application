@@ -67,23 +67,20 @@ class _SigninState extends State<Signin> {
                         SizedBox(
                           width: 10,
                         ),
-                        Container(
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(18),
-                              )),
-                          child: SizedBox(
-                            height: 25,
-                            width: 200,
-                            child: TextField(
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                contentPadding:
-                                    EdgeInsets.only(left: 10, bottom: 15),
+                        SizedBox(
+                          height: 25,
+                          width: 200,
+                          child: TextField(
+                            decoration: InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.grey),
+                                    borderRadius: BorderRadius.circular(20.0)),
+                                focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.brown),
+                                    borderRadius: BorderRadius.circular(20.0)),
                                 border: InputBorder.none,
-                              ),
-                            ),
+                                filled: true,
+                                fillColor: Color.fromARGB(255, 233, 224, 224)),
                           ),
                         ),
                       ],
@@ -102,23 +99,21 @@ class _SigninState extends State<Signin> {
                               fontWeight: FontWeight.bold),
                         ),
                         SizedBox(width: 15),
-                        Container(
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(18),
-                              )),
-                          child: SizedBox(
-                            height: 25,
-                            width: 200,
-                            child: TextField(
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                contentPadding:
-                                    EdgeInsets.only(left: 10, bottom: 15),
+                        SizedBox(
+                          height: 25,
+                          width: 200,
+                          child: TextField(
+                            obscureText: true,
+                            decoration: InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.grey),
+                                    borderRadius: BorderRadius.circular(20.0)),
+                                focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.brown),
+                                    borderRadius: BorderRadius.circular(20.0)),
                                 border: InputBorder.none,
-                              ),
-                            ),
+                                filled: true,
+                                fillColor: Color.fromARGB(255, 233, 224, 224)),
                           ),
                         ),
                       ],
@@ -137,7 +132,7 @@ class _SigninState extends State<Signin> {
                         height: 28,
                         width: 200,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(17),
                             color: Color.fromARGB(255, 133, 73, 51)),
                         child: Center(
                           child: Text(
