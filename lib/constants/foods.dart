@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 
 class Foods extends StatelessWidget {
-  final prize;
-  final img;
-  Foods({Key? key, required this.prize, required this.img}) : super(key: key);
+  final String prize;
+  final String img;
+  const Foods({Key? key, required this.prize, required this.img})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        print("AN IMAGED WAS CLICKED");
-      },
-      child: Container(
+      onTap: () {},
+      child: SizedBox(
         height: 150,
         width: 150,
         child: Stack(
@@ -31,13 +30,13 @@ class Foods extends StatelessWidget {
                     child: Center(
                       child: Text(
                         prize.toString(),
-                        style:
-                            TextStyle(color: Color.fromARGB(255, 10, 219, 31)),
+                        style: const TextStyle(
+                            color: Color.fromARGB(255, 10, 219, 31)),
                       ),
                     ),
                     height: 20,
                     width: 50,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         borderRadius: BorderRadius.only(
                           topRight: Radius.circular(20),
                           bottomRight: Radius.circular(20),

@@ -1,8 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_application/screens/in.dart';
 
-class Intro extends StatelessWidget {
+class Intro extends StatefulWidget {
   const Intro({Key? key}) : super(key: key);
+
+  @override
+  State<Intro> createState() => _IntroState();
+}
+
+class _IntroState extends State<Intro> {
+  @override
+  void initState() {
+    super.initState();
+    navigateToHome();
+  }
+
+  navigateToHome() async {
+    await Future.delayed(const Duration(milliseconds: 2000), (() {}));
+    Navigator.pushReplacement(context, MaterialPageRoute(
+      builder: (context) {
+        return const Signin();
+      },
+    ));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +32,7 @@ class Intro extends StatelessWidget {
           Expanded(
             flex: 3,
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
                     'assets/up.png',
@@ -25,7 +45,7 @@ class Intro extends StatelessWidget {
           Expanded(
             flex: 3,
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
                     'assets/turky.png',
@@ -37,7 +57,7 @@ class Intro extends StatelessWidget {
           Expanded(
             flex: 1,
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
                     'assets/rest.png',
@@ -49,7 +69,7 @@ class Intro extends StatelessWidget {
           Expanded(
             flex: 3,
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
                     'assets/down.jpg',
@@ -60,21 +80,6 @@ class Intro extends StatelessWidget {
             ),
           ),
         ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        hoverColor: Color.fromARGB(255, 182, 164, 2),
-        focusColor: Colors.grey,
-        backgroundColor: Color.fromARGB(255, 252, 210, 84),
-        onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return Signin();
-          }));
-        },
-        child: Icon(
-          Icons.arrow_forward,
-          size: 50,
-          color: Colors.black,
-        ),
       ),
     );
   }

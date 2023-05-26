@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:restaurant_application/screens/in.dart';
 
@@ -10,8 +8,8 @@ class Btn extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (Context) {
-          return Signin();
+        Navigator.push(context, MaterialPageRoute(builder: (context) {
+          return const Signin();
         }));
       },
       child: Container(
@@ -21,7 +19,7 @@ class Btn extends StatelessWidget {
           color: Colors.brown[700],
           borderRadius: BorderRadius.circular(20),
         ),
-        child: Center(
+        child: const Center(
             child: Text(
           'Sign up',
           style: TextStyle(fontSize: 23, color: Colors.white),

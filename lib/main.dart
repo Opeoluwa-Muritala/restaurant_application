@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_application/screens/create.dart';
-import 'package:restaurant_application/screens/home.dart';
-import 'package:restaurant_application/screens/in.dart';
+
 import 'package:restaurant_application/screens/intro.dart';
 
 void main() {
-  runApp(Myapp());
+  runApp(const Myapp());
 }
 
 class Myapp extends StatelessWidget {
@@ -16,7 +14,7 @@ class Myapp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.brown),
       debugShowCheckedModeBanner: false,
-      home: Intro(),
+      home: const Intro(),
     );
   }
 }
