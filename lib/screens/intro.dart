@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_application/screens/in.dart';
+import 'package:restaurant_application/autenticate/signin.dart';
 
 class Intro extends StatefulWidget {
   const Intro({Key? key}) : super(key: key);
