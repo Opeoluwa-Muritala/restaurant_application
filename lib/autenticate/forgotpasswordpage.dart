@@ -1,23 +1,14 @@
 import 'package:flutter/material.dart';
 
-import 'package:restaurant_application/constants/btn.dart';
-
-import '../screens/home.dart';
-import 'signin.dart';
-
-class Signup extends StatefulWidget {
-  const Signup({Key? key}) : super(key: key);
+class ForgotPasswordPage extends StatefulWidget {
+  ForgotPasswordPage({Key? key}) : super(key: key);
 
   @override
-  State<Signup> createState() => _SignupState();
+  State<ForgotPasswordPage> createState() => _ForgotPasswordPageState();
 }
 
-class _SignupState extends State<Signup> {
-  final enailcontroller = TextEditingController();
-  final passwordcontoller = TextEditingController();
-  final confirmpasswordcontoller = TextEditingController();
-  final numbercontroller = TextEditingController();
-  final usernamecontroller = TextEditingController();
+class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
+  final emailcontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +21,7 @@ class _SignupState extends State<Signup> {
                 clipper: WaveClipper2(),
                 child: Container(
                   width: double.infinity,
-                  height: 250,
+                  height: 300,
                   decoration: BoxDecoration(
                       gradient: LinearGradient(colors: [
                     Colors.brown.shade300,
@@ -43,7 +34,7 @@ class _SignupState extends State<Signup> {
                 clipper: WaveClipper3(),
                 child: Container(
                   width: double.infinity,
-                  height: 250,
+                  height: 300,
                   decoration: BoxDecoration(
                       gradient: LinearGradient(colors: [
                     Colors.brown.shade200,
@@ -56,7 +47,7 @@ class _SignupState extends State<Signup> {
                 clipper: WaveClipper1(),
                 child: Container(
                   width: double.infinity,
-                  height: 250,
+                  height: 300,
                   decoration: BoxDecoration(
                       gradient: LinearGradient(colors: [
                     Colors.brown.shade800,
@@ -97,63 +88,7 @@ class _SignupState extends State<Signup> {
               elevation: 2.0,
               borderRadius: const BorderRadius.all(Radius.circular(30)),
               child: TextField(
-                controller: usernamecontroller,
-                onChanged: (String value) {},
-                cursorColor: Colors.deepOrange,
-                decoration: const InputDecoration(
-                    hintText: "Username",
-                    prefixIcon: Material(
-                      elevation: 0,
-                      borderRadius: BorderRadius.all(Radius.circular(30)),
-                      child: Icon(
-                        Icons.person,
-                        color: Colors.brown,
-                      ),
-                    ),
-                    border: InputBorder.none,
-                    contentPadding:
-                        EdgeInsets.symmetric(horizontal: 25, vertical: 13)),
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 32),
-            child: Material(
-              elevation: 2.0,
-              borderRadius: const BorderRadius.all(Radius.circular(30)),
-              child: TextField(
-                controller: numbercontroller,
-                onChanged: (String value) {},
-                cursorColor: Colors.deepOrange,
-                decoration: const InputDecoration(
-                    hintText: "Phone number",
-                    prefixIcon: Material(
-                      elevation: 0,
-                      borderRadius: BorderRadius.all(Radius.circular(30)),
-                      child: Icon(
-                        Icons.phone_android,
-                        color: Colors.brown,
-                      ),
-                    ),
-                    border: InputBorder.none,
-                    contentPadding:
-                        EdgeInsets.symmetric(horizontal: 25, vertical: 13)),
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 32),
-            child: Material(
-              elevation: 2.0,
-              borderRadius: const BorderRadius.all(Radius.circular(30)),
-              child: TextField(
-                controller: enailcontroller,
+                controller: emailcontroller,
                 onChanged: (String value) {},
                 cursorColor: Colors.deepOrange,
                 decoration: const InputDecoration(
@@ -163,64 +98,6 @@ class _SignupState extends State<Signup> {
                       borderRadius: BorderRadius.all(Radius.circular(30)),
                       child: Icon(
                         Icons.email,
-                        color: Colors.brown,
-                      ),
-                    ),
-                    border: InputBorder.none,
-                    contentPadding:
-                        EdgeInsets.symmetric(horizontal: 25, vertical: 13)),
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 32),
-            child: Material(
-              elevation: 2.0,
-              borderRadius: const BorderRadius.all(Radius.circular(30)),
-              child: TextField(
-                obscureText: true,
-                controller: passwordcontoller,
-                onChanged: (String value) {},
-                cursorColor: Colors.deepOrange,
-                decoration: const InputDecoration(
-                    hintText: "Password",
-                    prefixIcon: Material(
-                      elevation: 0,
-                      borderRadius: BorderRadius.all(Radius.circular(30)),
-                      child: Icon(
-                        Icons.lock,
-                        color: Colors.brown,
-                      ),
-                    ),
-                    border: InputBorder.none,
-                    contentPadding:
-                        EdgeInsets.symmetric(horizontal: 25, vertical: 13)),
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 32),
-            child: Material(
-              elevation: 2.0,
-              borderRadius: const BorderRadius.all(Radius.circular(30)),
-              child: TextField(
-                obscureText: true,
-                controller: confirmpasswordcontoller,
-                onChanged: (String value) {},
-                cursorColor: Colors.deepOrange,
-                decoration: const InputDecoration(
-                    hintText: "Confirm Password",
-                    prefixIcon: Material(
-                      elevation: 0,
-                      borderRadius: BorderRadius.all(Radius.circular(30)),
-                      child: Icon(
-                        Icons.lock,
                         color: Colors.brown,
                       ),
                     ),
@@ -241,51 +118,15 @@ class _SignupState extends State<Signup> {
                     color: Colors.brown.shade600),
                 child: TextButton(
                   child: const Text(
-                    "Sign up",
+                    "Recover",
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w700,
                         fontSize: 18),
                   ),
-                  onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context) {
-                        return const Home();
-                      },
-                    ));
-                  },
+                  onPressed: () {},
                 ),
               )),
-          const SizedBox(
-            height: 20,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              const Text(
-                "Already have an Account ? ",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                    fontWeight: FontWeight.normal),
-              ),
-              TextButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context) {
-                      return const Signin();
-                    },
-                  ));
-                },
-                child: const Text("Sign in ",
-                    style: TextStyle(
-                        color: Colors.brown,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
-                        decoration: TextDecoration.underline)),
-              ),
-            ],
-          )
         ],
       ),
     );

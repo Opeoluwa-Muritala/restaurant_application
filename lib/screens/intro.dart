@@ -27,59 +27,30 @@ class _IntroState extends State<Intro> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Expanded(
-            flex: 3,
-            child: Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(
-                    'assets/up.png',
-                  ),
-                  fit: BoxFit.cover,
-                ),
-              ),
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(color: Colors.brown.shade600),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Icon(
+              Icons.fastfood,
+              color: Colors.white,
+              size: 80,
             ),
-          ),
-          Expanded(
-            flex: 3,
-            child: Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(
-                    'assets/turky.png',
-                  ),
-                ),
-              ),
+            SizedBox(
+              height: 20,
             ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(
-                    'assets/rest.png',
-                  ),
-                ),
-              ),
+            Text(
+              "Taste Me",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 50),
             ),
-          ),
-          Expanded(
-            flex: 3,
-            child: Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(
-                    'assets/down.jpg',
-                  ),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
