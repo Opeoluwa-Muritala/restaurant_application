@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:restaurant_application/constants/foods.dart';
 
+import '../constants/foodcard.dart';
 import '../constants/tabcontent.dart';
 import '../models/model.dart';
 
@@ -171,9 +172,76 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),
-          Row(
-            children: [],
-          )
+          Expanded(
+            flex: 2,
+            child: foodcard(food: food),
+          ),
+          Expanded(
+              flex: 2,
+              child: Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Offers & Discounts",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Container(
+                      height: 180,
+                      width: MediaQuery.of(context).size.width * .9,
+                      decoration: BoxDecoration(
+                        image: const DecorationImage(
+                            image: AssetImage('assets/chik.jpg'),
+                            fit: BoxFit.cover),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            gradient: LinearGradient(
+                              colors: [
+                                const Color(0XFFFF961F).withOpacity(0.7),
+                                Colors.brown.shade300.withOpacity(0.7)
+                              ],
+                            )),
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Row(
+                            children: [
+                              const Expanded(
+                                  child: Icon(
+                                Icons.fastfood,
+                                color: Colors.white,
+                                size: 100,
+                              )),
+                              Expanded(
+                                  child: RichText(
+                                      text: const TextSpan(children: [
+                                TextSpan(
+                                    text: 'Get Discount of \n',
+                                    style: TextStyle(fontSize: 16)),
+                                TextSpan(
+                                    text: '30% \n',
+                                    style: TextStyle(
+                                        fontSize: 43,
+                                        fontWeight: FontWeight.bold)),
+                                TextSpan(
+                                    text:
+                                        'at Taste me on your first order & instant cashback',
+                                    style: TextStyle(fontSize: 12)),
+                              ]))),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
