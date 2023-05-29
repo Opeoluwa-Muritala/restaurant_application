@@ -32,22 +32,34 @@ class _IntroState extends State<Intro> {
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(color: Colors.brown.shade600),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Icon(
-              Icons.fastfood,
-              color: Colors.white,
-              size: 80,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Icon(
+                  Icons.fastfood,
+                  color: Colors.white,
+                  size: 80,
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  "Taste Me",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 50),
+                ),
+              ],
             ),
-            SizedBox(
-              height: 20,
-            ),
-            Text(
-              "Taste Me",
+            const Text(
+              "MADE BY PHENOMES",
               style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w700,
-                  fontSize: 50),
+                  fontSize: 20),
             ),
           ],
         ),

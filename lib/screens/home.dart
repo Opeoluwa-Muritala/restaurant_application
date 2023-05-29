@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:restaurant_application/constants/foods.dart';
+import 'package:restaurant_application/screens/aboutpage.dart';
 import 'package:restaurant_application/screens/detailspage.dart';
+import 'package:restaurant_application/screens/profilepage.dart';
 
 import '../constants/foodcard.dart';
 import '../constants/tabcontent.dart';
@@ -86,16 +89,103 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        backgroundColor: Colors.brown,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 16.0),
+          child: Column(
+            children: [
+              Column(
+                children: [
+                  DrawerHeader(
+                      child: Column(
+                    children: const [
+                      Icon(
+                        Icons.fastfood,
+                        color: Colors.white,
+                        size: 60,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text("Taste Me",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white,
+                              fontSize: 40)),
+                    ],
+                  )),
+                  ListTile(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) {
+                          return const ProfilePage();
+                        },
+                      ));
+                    },
+                    leading: const Icon(
+                      Icons.person,
+                      color: Colors.white,
+                    ),
+                    textColor: Colors.white,
+                    title: Text(
+                      "P r o f i l e".toUpperCase(),
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  ListTile(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) {
+                          return const About();
+                        },
+                      ));
+                    },
+                    leading: const Icon(
+                      Icons.phone_android,
+                      color: Colors.white,
+                    ),
+                    textColor: Colors.white,
+                    title: Text(
+                      "A b o u t".toUpperCase(),
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ],
+              ),
+              const Spacer(),
+              ListTile(
+                onTap: () {
+                  SystemNavigator.pop();
+                },
+                leading: const Icon(
+                  Icons.logout,
+                  color: Colors.white,
+                ),
+                textColor: Colors.white,
+                title: Text(
+                  "L O G O U T".toUpperCase(),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        leading: IconButton(
-          icon: Image.asset(
-            "assets/menu.png",
-            color: Colors.brown,
-          ),
-          onPressed: () {},
-        ),
+        leading: Builder(builder: (context) {
+          return IconButton(
+            icon: Image.asset(
+              "assets/menu.png",
+              color: Colors.brown,
+            ),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          );
+        }),
         centerTitle: true,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -115,16 +205,6 @@ class _HomeState extends State<Home> {
                     fontSize: 20)),
           ],
         ),
-        actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: const Icon(
-                Icons.logout,
-                color: Colors.brown,
-              ))
-        ],
       ),
       body: Column(
         children: [

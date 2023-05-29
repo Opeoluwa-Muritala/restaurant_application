@@ -12,7 +12,17 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.brown[700],
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.arrow_back, color: Colors.white)),
+      ),
       body: ListView(
         children: <Widget>[
           Stack(
@@ -50,8 +60,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                   height: 300,
                   decoration: BoxDecoration(
                       gradient: LinearGradient(colors: [
-                    Colors.brown.shade800,
-                    Colors.brown.shade500
+                    Colors.brown.shade700,
+                    Colors.brown.shade700
                   ])),
                   child: Column(
                     children: const <Widget>[
@@ -61,7 +71,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                       Icon(
                         Icons.fastfood,
                         color: Colors.white,
-                        size: 60,
+                        size: 65,
                       ),
                       SizedBox(
                         height: 20,
@@ -71,7 +81,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w700,
-                            fontSize: 30),
+                            fontSize: 35),
                       ),
                     ],
                   ),
