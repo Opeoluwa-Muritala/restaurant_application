@@ -24,11 +24,11 @@ class foodcard extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 13.0),
+        padding: const EdgeInsets.symmetric(horizontal: 10.0),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
@@ -42,13 +42,14 @@ class foodcard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Container(
-                  height: 100,
+                  height: 150,
                   width: 200,
                   decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage(img), fit: BoxFit.cover),
                     color: Colors.brown.shade100,
                     shape: BoxShape.circle,
                   ),
-                  child: Image.asset(img),
                 ),
                 Text(
                   name,
@@ -59,7 +60,8 @@ class foodcard extends StatelessWidget {
                 ),
                 Text(
                   prize,
-                  style: const TextStyle(fontSize: 16),
+                  style: const TextStyle(
+                      fontSize: 16, fontWeight: FontWeight.bold),
                 )
               ],
             ),
