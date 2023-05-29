@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:restaurant_application/constants/foods.dart';
+import 'package:restaurant_application/screens/detailspage.dart';
 
 import '../constants/foodcard.dart';
 import '../constants/tabcontent.dart';
@@ -33,34 +34,44 @@ class _HomeState extends State<Home> {
         name: 'Spagetti',
         prize: '\$25',
         img: 'assets/spag.jpg',
-        description: ''),
+        description:
+            'Spaghetti (Italian: [spaˈɡetti]) is a long, thin, solid, cylindrical pasta. It is a staple food of traditional Italian cuisine. Like other pasta, spaghetti is made of milled wheat, water, and sometimes enriched with vitamins and minerals. Italian spaghetti is typically made from durum-wheat semolina.'),
     item(
         name: 'Macaroni',
         prize: '\$25',
         img: 'assets/macaroni.jpg',
-        description: ''),
+        description:
+            'Macaroni ( Italian: maccheroni) is dry pasta shaped like narrow tubes. Made with durum wheat, macaroni is commonly cut in short lengths; curved macaroni may be referred to as elbow macaroni.'),
     item(
         name: 'Rosted chicken',
         prize: '\$35',
         img: 'assets/chicken.jpg',
-        description: ''),
+        description:
+            'Crispy, crackly skin, with most of the fat rendered out. Perfectly cooked, barely pink breast (155°F) Thoroughly roasted thigh and legs (165–175°F) As little effort as possible to get the above, so that it is simple enough to prepare even on a weeknight.'),
     item(
         name: 'Milkshake',
         prize: '\$10',
         img: 'assets/milkshake.jpg',
-        description: ''),
+        description:
+            'a frothy drink made of cold milk, flavoring, and usually ice cream, shaken together or blended in a mixer'),
     item(
         name: 'Grilled chicken',
         prize: '\$35',
         img: 'assets/chik.jpg',
-        description: ''),
+        description:
+            "A 3-ounce serving of cooked chicken breast has about 140 calories, 3 grams of fat and 25 grams of protein. Chicken breast is also a great source of selenium, Vitamin B6, niacin and phosphorus. While delicious, we generally do not recommend eating the skin of the chicken because you'll quadruple the fat content."),
     item(
         name: 'Burgar',
         prize: '\$15',
         img: 'assets/bugar.jpg',
-        description: ''),
+        description:
+            'A sandwich consisting of fillings—usually a patty of ground meat, typically beef—placed inside a sliced bun or bread roll.'),
     item(
-        name: 'Turky', prize: '\$45', img: 'assets/turky.png', description: ''),
+        name: 'Turkey',
+        prize: '\$45',
+        img: 'assets/turky.png',
+        description:
+            'Made with a fresh or frozen and thawed turkey, lots of rich butter, fresh herbs, a hint of bright lemon, and flavorful onion and garlic.'),
   ];
   List display_list = List.from(food);
   void searchfood(String value) {
@@ -173,9 +184,27 @@ class _HomeState extends State<Home> {
             ),
           ),
           Expanded(
-            flex: 2,
-            child: foodcard(food: food),
-          ),
+              flex: 2,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: food.length,
+                  itemBuilder: (context, index) {
+                    return foodcard(
+                        name: food[index].name,
+                        prize: food[index].prize,
+                        img: food[index].img,
+                        food: food,
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return Detailspage(
+                                name: food[index].name,
+                                prize: food[index].prize,
+                                img: food[index].img,
+                                description: food[index].description);
+                          }));
+                        });
+                  })),
           Expanded(
               flex: 2,
               child: Container(
