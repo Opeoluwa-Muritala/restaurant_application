@@ -32,7 +32,7 @@ class _HomeState extends State<Home> {
     });
   }
 
-  static List<item> food = [
+  List<item> food = [
     item(
         name: 'Spagetti',
         prize: '\$25',
@@ -76,19 +76,33 @@ class _HomeState extends State<Home> {
         description:
             'Made with a fresh or frozen and thawed turkey, lots of rich butter, fresh herbs, a hint of bright lemon, and flavorful onion and garlic.'),
   ];
-  List display_list = List.from(food);
-  void searchfood(String value) {
-    setState(() {
-      display_list = food
+  List foundItemList = [];
+  @override
+  void initState() {
+    foundItemList = food;
+    super.initState();
+  }
+
+  void filteritem(String itemName) {
+    List result = [];
+    if (itemName.trim().isEmpty) {
+      result = food;
+    } else {
+      result = food
           .where((element) =>
-              element.name.toLowerCase().contains(value.toLowerCase()))
+              element.toString().toLowerCase().contains(itemName.toLowerCase()))
           .toList();
+    }
+    setState(() {
+      foundItemList = result;
     });
   }
 
+  final TextEditingController tcontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       drawer: Drawer(
         backgroundColor: Colors.brown,
         child: Padding(
@@ -223,8 +237,9 @@ class _HomeState extends State<Home> {
                 ),
               ]),
               child: TextField(
+                controller: tcontroller,
                 onChanged: (value) {
-                  searchfood(value);
+                  filteritem(value);
                 },
                 decoration: InputDecoration(
                   hintText: 'Search food',
@@ -267,21 +282,21 @@ class _HomeState extends State<Home> {
               flex: 2,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: food.length,
+                  itemCount: foundItemList.length,
                   itemBuilder: (context, index) {
                     return foodcard(
-                        name: food[index].name,
-                        prize: food[index].prize,
-                        img: food[index].img,
+                        name: foundItemList[index].name,
+                        prize: foundItemList[index].prize,
+                        img: foundItemList[index].img,
                         food: food,
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
                             return Detailspage(
-                                name: food[index].name,
-                                prize: food[index].prize,
-                                img: food[index].img,
-                                description: food[index].description);
+                                name: foundItemList[index].name,
+                                prize: foundItemList[index].prize,
+                                img: foundItemList[index].img,
+                                description: foundItemList[index].description);
                           }));
                         });
                   })),
