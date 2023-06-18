@@ -17,7 +17,7 @@ class foodcard extends StatelessWidget {
     required this.onTap,
   }) : super(key: key);
 
-  final List<item> food;
+  final List<Item> food;
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:restaurant_application/constants/foods.dart';
 import 'package:restaurant_application/screens/aboutpage.dart';
 import 'package:restaurant_application/screens/detailspage.dart';
 import 'package:restaurant_application/screens/profilepage.dart';
@@ -32,73 +31,61 @@ class _HomeState extends State<Home> {
     });
   }
 
-  List<item> food = [
-    item(
+  static List<Item> foods = [
+    Item(
         name: 'Spagetti',
         prize: '\$25',
         img: 'assets/spag.jpg',
         description:
             'Spaghetti (Italian: [spaˈɡetti]) is a long, thin, solid, cylindrical pasta. It is a staple food of traditional Italian cuisine. Like other pasta, spaghetti is made of milled wheat, water, and sometimes enriched with vitamins and minerals. Italian spaghetti is typically made from durum-wheat semolina.'),
-    item(
+    Item(
         name: 'Macaroni',
         prize: '\$25',
         img: 'assets/macaroni.jpg',
         description:
             'Macaroni ( Italian: maccheroni) is dry pasta shaped like narrow tubes. Made with durum wheat, macaroni is commonly cut in short lengths; curved macaroni may be referred to as elbow macaroni.'),
-    item(
+    Item(
         name: 'Rosted chicken',
         prize: '\$35',
         img: 'assets/chicken.jpg',
         description:
             'Crispy, crackly skin, with most of the fat rendered out. Perfectly cooked, barely pink breast (155°F) Thoroughly roasted thigh and legs (165–175°F) As little effort as possible to get the above, so that it is simple enough to prepare even on a weeknight.'),
-    item(
+    Item(
         name: 'Milkshake',
         prize: '\$10',
         img: 'assets/milkshake.jpg',
         description:
             'a frothy drink made of cold milk, flavoring, and usually ice cream, shaken together or blended in a mixer'),
-    item(
+    Item(
         name: 'Grilled chicken',
         prize: '\$35',
         img: 'assets/chik.jpg',
         description:
             "A 3-ounce serving of cooked chicken breast has about 140 calories, 3 grams of fat and 25 grams of protein. Chicken breast is also a great source of selenium, Vitamin B6, niacin and phosphorus. While delicious, we generally do not recommend eating the skin of the chicken because you'll quadruple the fat content."),
-    item(
+    Item(
         name: 'Burgar',
         prize: '\$15',
         img: 'assets/bugar.jpg',
         description:
             'A sandwich consisting of fillings—usually a patty of ground meat, typically beef—placed inside a sliced bun or bread roll.'),
-    item(
+    Item(
         name: 'Turkey',
         prize: '\$45',
         img: 'assets/turky.png',
         description:
             'Made with a fresh or frozen and thawed turkey, lots of rich butter, fresh herbs, a hint of bright lemon, and flavorful onion and garlic.'),
   ];
-  List foundItemList = [];
-  @override
-  void initState() {
-    foundItemList = food;
-    super.initState();
-  }
 
-  void filteritem(String itemName) {
-    List result = [];
-    if (itemName.trim().isEmpty) {
-      result = food;
-    } else {
-      result = food
-          .where((element) =>
-              element.toString().toLowerCase().contains(itemName.toLowerCase()))
-          .toList();
-    }
+  List<Item> display_list = List.from(foods);
+  void updateList(String value) {
     setState(() {
-      foundItemList = result;
+      display_list = foods
+          .where((element) =>
+              element.name.toLowerCase().contains(value.toLowerCase()))
+          .toList();
     });
   }
 
-  final TextEditingController tcontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -237,10 +224,7 @@ class _HomeState extends State<Home> {
                 ),
               ]),
               child: TextField(
-                controller: tcontroller,
-                onChanged: (value) {
-                  filteritem(value);
-                },
+                onChanged: updateList,
                 decoration: InputDecoration(
                   hintText: 'Search food',
                   filled: true,
@@ -282,27 +266,27 @@ class _HomeState extends State<Home> {
               flex: 2,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: foundItemList.length,
+                  itemCount: display_list.length,
                   itemBuilder: (context, index) {
                     return foodcard(
-                        name: foundItemList[index].name,
-                        prize: foundItemList[index].prize,
-                        img: foundItemList[index].img,
-                        food: food,
+                        name: display_list[index].name,
+                        prize: display_list[index].prize,
+                        img: display_list[index].img,
+                        food: foods,
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
                             return Detailspage(
-                                name: foundItemList[index].name,
-                                prize: foundItemList[index].prize,
-                                img: foundItemList[index].img,
-                                description: foundItemList[index].description);
+                                name: display_list[index].name,
+                                prize: display_list[index].prize,
+                                img: display_list[index].img,
+                                description: display_list[index].description);
                           }));
                         });
                   })),
           Expanded(
               flex: 2,
-              child: Container(
+              child: SizedBox(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

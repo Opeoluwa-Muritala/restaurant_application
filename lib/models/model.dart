@@ -1,9 +1,9 @@
-class item {
+class Item {
   final String name;
   final String prize;
   final img;
   final String description;
-  item(
+  Item(
       {required this.name,
       required this.prize,
       required this.img,
